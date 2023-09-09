@@ -1,0 +1,13 @@
+[package]
+name = "knapsack"
+version = "0.1.0"
+edition = "2021"
+description = "A binary serialization libary"
+license = "Apache-2.0"
+
+[features]
+default = ["derive"]
+derive = ["dep:knapsack-derive"]
+
+[dependencies]
+knapsack-derive = { path = "../knapsack-derive", version = "=0.1.0", optional = true }

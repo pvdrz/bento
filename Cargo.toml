@@ -1,10 +1,5 @@
-[package]
-name = "knapsack"
-version = "0.1.0"
-edition = "2021"
-description = "A binary serialization libary"
-license = "Apache-2.0"
+[workspace]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+resolver = "2"
 
-[dependencies]
+members = [ "knapsack", "knapsack-derive" ]
