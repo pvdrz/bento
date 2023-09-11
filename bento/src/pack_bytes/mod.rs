@@ -2,7 +2,11 @@ mod alloc;
 
 use crate::PackError;
 
+/// A type that can binarily serialize any value whose type implements [`Pack`](`crate::Pack`).
+///
+/// Types that implement this trait are usually called packers.
 pub trait PackBytes {
+    /// Attempts to write all the provided `bytes` into this packer.
     fn pack_bytes(&mut self, bytes: &[u8]) -> Result<(), PackError>;
 }
 
@@ -12,6 +16,9 @@ impl<P: PackBytes> PackBytes for &mut P {
     }
 }
 
+/// A wrapper around `&mut [u8]` that can be used to pack values.
+///
+/// It can be created from a `&mut [u8]` by using [`From::from`] or [`Into::into`].
 pub struct SlicePacker<'p> {
     offset: usize,
     slice: &'p mut [u8],

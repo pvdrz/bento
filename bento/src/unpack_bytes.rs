@@ -1,6 +1,10 @@
 use crate::UnpackError;
 
+/// A type that can binarily deserialize any value whose type implements [`Unpack`](`crate::Unpack`).
+///
+/// Types that implement this trait are usually called unpackers.
 pub trait UnpackBytes {
+    /// Attempts to read the exactly number of bytes required to fill `bytes`.
     fn unpack_bytes(&mut self, bytes: &mut [u8]) -> Result<(), UnpackError>;
 }
 

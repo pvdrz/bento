@@ -37,5 +37,13 @@ fn unpack_derive(s: synstructure::Structure) -> proc_macro2::TokenStream {
     })
 }
 
-synstructure::decl_derive!([Pack] => pack_derive);
-synstructure::decl_derive!([Unpack] => unpack_derive);
+synstructure::decl_derive!{
+    [Pack] => 
+    /// Derive macro available if bentō is built with `features = ["derive"]`.
+    pack_derive
+}
+synstructure::decl_derive!{
+    [Unpack] => 
+    /// Derive macro available if bentō is built with `features = ["derive"]`.
+    unpack_derive
+}
