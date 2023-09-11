@@ -9,7 +9,7 @@
 //!
 //! # Example
 //! ```rust
-//! use knapsack::{Pack, Unpack};
+//! use bento::{Pack, Unpack};
 //!
 //! // Some data we want to serialize.
 //! let data = vec!["hello", "world"];
@@ -44,7 +44,7 @@ use core::fmt;
 use std::error::Error;
 
 #[cfg(feature = "derive")]
-pub use knapsack_derive::{Unpack, Pack};
+pub use bento_derive::{Unpack, Pack};
 
 pub use pack_bytes::{PackBytes, SlicePacker};
 pub use unpack_bytes::UnpackBytes;

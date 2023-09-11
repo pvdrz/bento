@@ -1,7 +1,7 @@
 #[macro_export]
 macro_rules! tests {
     ($($ty:ty: [ $value:expr, $consistency:ident, $packed_len:ident],)*) => {
-        use knapsack::{PackExt, Unpack};
+        use bento::{PackExt, Unpack};
 
         $(
             #[test]

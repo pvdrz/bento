@@ -47,5 +47,5 @@ impl Unpack for isize {
 
 /// Check that `usize` values fit in 64 bits.
 const _USIZE_CHECK: () = if core::mem::size_of::<usize>() > core::mem::size_of::<u64>() {
-    panic!("knapsack doesn't support platforms where `usize` is larger than `u64");
+    panic!("bento doesn't support platforms where `usize` is larger than `u64");
 };
