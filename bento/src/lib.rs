@@ -25,15 +25,15 @@ pub use unpack_bytes::UnpackBytes;
 #[derive(Debug)]
 pub enum PackError {
     /// The [packer](`PackBytes`) did not have enough capacity to pack the value. 
-    UnexpectedEOF,
+    NotEnoughBytes,
 }
 
 
 /// An error that can happen while unpacking a value.
 #[derive(Debug)]
 pub enum UnpackError {
-    /// The [unpacker](`UnpackBytes`) unexpectly run out of bytes while unpacking a value. 
-    NotEnoughBytes,
+    /// The [unpacker](`UnpackBytes`) unexpectly ran out of bytes while unpacking a value. 
+    UnexpectedEOF,
     /// A validation error specific to the [`Unpack`] implementation.
     Validation(Box<dyn Error + 'static>),
 }
@@ -41,7 +41,7 @@ pub enum UnpackError {
 impl fmt::Display for UnpackError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            UnpackError::NotEnoughBytes => "not enough bytes while unpacking".fmt(f),
+            UnpackError::UnexpectedEOF => "not enough bytes while unpacking".fmt(f),
             UnpackError::Validation(err) => write!(f, "validation error: {err}"),
         }
     }

@@ -41,7 +41,7 @@ impl<'p> PackBytes for SlicePacker<'p> {
 
             Ok(())
         } else {
-            Err(PackError::UnexpectedEOF)
+            Err(PackError::NotEnoughBytes)
         }
     }
 }
