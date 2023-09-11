@@ -4,7 +4,7 @@
 //! deserialized respectively. These two traits are implemented for some of the standard library
 //! types.
 //!
-//! Knapsack also provides the [`PackBytes`] and [`UnpackBytes`] traits for types that can can be
+//! Bentō also provides the [`PackBytes`] and [`UnpackBytes`] traits for types that can can be
 //! used to read and write bytes respectively.
 //!
 //! # Example
