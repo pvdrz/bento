@@ -14,7 +14,7 @@ impl<const N: usize> Unpack for [u8; N] {
 
         unpacker.unpack_bytes(&mut arr)?;
 
-        return Ok(arr);
+        Ok(arr)
     }
 }
 
