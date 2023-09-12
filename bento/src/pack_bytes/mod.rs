@@ -67,4 +67,3 @@ impl PackBytes for LenPacker {
         Ok(())
     }
 }
-
